@@ -1,5 +1,5 @@
-import { Home } from "./components/Home";
-import { AddUser } from "./components/AddUser";
+import { Home } from "./components/HomePage/Home";
+import { AddUser } from "./components/SignUp";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import AllUser from "./components/AllUser";
 import Update from "./components/Update";
@@ -34,7 +34,7 @@ function App(props) {
 
 
           <Route exact path="/home">
-           <Home/>
+         <Home/>
             {/* <Protected comp={Home} /> */}
           </Route>
         </Switch>

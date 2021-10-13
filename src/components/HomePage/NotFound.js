@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../Assest/Image/not.png'
+import image from '../../Assest/Image/not.png'
  const NotFound = () => {
     return (
         <div>

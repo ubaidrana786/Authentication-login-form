@@ -1,9 +1,9 @@
-import card1 from "../Assest/Image/card1.png";
-import card2 from "../Assest/Image/card2.jpg";
-import card3 from "../Assest/Image/card3.png";
-import card4 from "../Assest/Image/card4.png";
-import card5 from "../Assest/Image/card5.jpg";
-import card6 from "../Assest/Image/card6.jpeg";
+import card1 from "../../Assest/Image/card1.png";
+import card2 from "../../Assest/Image/card2.jpg";
+import card3 from "../../Assest/Image/card3.png";
+import card4 from "../../Assest/Image/card4.png";
+import card5 from "../../Assest/Image/card5.jpg";
+import card6 from "../../Assest/Image/card6.jpeg";
 const CardItem = [
   {
     imgsrc: card1,

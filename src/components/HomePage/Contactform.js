@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../index.css";
-import image3 from "../Assest/Image/form.png";
+import "../../index.css";
+import image3 from "../../Assest/Image/form.png";
 export default function Contactform() {
   const [user, setuser] = useState({
     name: "",

@@ -1,61 +1,98 @@
-// import React, { useState } from "react";
-// import "../index.css";
-// import {
-//   Button,
-//   FormControl,
-//   FormGroup,
-//   Input,
-//   InputLabel,
-//   makeStyles,
-// } from "@material-ui/core";
+import {
+  Button,
+  FormControl,
+  FormGroup,
+  Input,
+  InputLabel,
+  makeStyles,
+} from "@material-ui/core";
+import React from "react";
+import { useState } from "react";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+const usestyle = makeStyles({
+  formwidth: {
+    width: "50%",
+    margin: "5% 0 0 25%",
+    "& > *": {
+      marginTop: "20px",
+    },
+  },
+});
 
-// import { Link } from "react-router-dom";
+export const AddUser = () => {
+  const [values, setvalues] = useState({
+    name: "",
+    email: "",
+    password: "",
+    
+  });
 
-// const usestyle = makeStyles({
-//   formwidth: {
-//     width: "30%",
-//     margin: "15% 0 0 35%",
-//     "& > *": {
-//       marginTop: "30px",
-//     },
-//   },
-// });
-// export default function Signup() {
-//   const [email, setemail] = useState("");
-//   const [passwrod, setpasswrod] = useState("");
 
-//   const chahgehandle = (e) => {};
+  const handlechange = (event) => {
+    setvalues({ ...values, [event.target.name]: event.target.value });
+  };
 
-//   const classes = usestyle();
+  let history = useHistory();
+  const handleSubmit = (event) => {
+    
+    event.preventDefault();
 
-//   const submit = async (e) => {
-//     e.preventDefault();
-//   };
-//   return (
-//     <>
-//       <FormGroup className={classes.formwidth}>
-//         <FormControl>
-//           <InputLabel>Email</InputLabel>
-//           <Input name="email" onChange={(e) => setemail(e.target.value)} />
-//         </FormControl>
+    fetch("http://localhost:3000/posts", {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(values),
+    }).then((response) => {
+      response.json().then((result) => {
+        history.push("/all");
+      });
+    });
+  };
 
-//         <FormControl>
-//           <InputLabel>password</InputLabel>
-//           <Input
-//             type="password"
-//             name="password"
-//             onChange={(e) => setemail(e.target.value)}
-//           />
-//         </FormControl>
-//         <Button
-//           variant="contained"
-//           style={{ backgroundColor: "#343a40", color: "white" }}
-//           onClick={submit}
-//         >
-//           Create Acccount ?
-//         </Button>
-//         <Link to={"/"}>Log In</Link>
-//       </FormGroup>
-//     </>
-//   );
-// }
+  const classes = usestyle();
+  return (
+    <div>
+      <FormGroup className={classes.formwidth}>
+        <FormControl>
+          <InputLabel>User Name</InputLabel>
+
+          <Input
+            type="text"
+            name="name"
+            value={values.name}
+            onChange={handlechange}
+          />
+        </FormControl>
+        <FormControl>
+          <InputLabel>Email</InputLabel>
+          <Input
+            type="email"
+            name="email"
+            value={values.email}
+            onChange={handlechange}
+          />
+        </FormControl>
+        <FormControl>
+          <InputLabel>Password</InputLabel>
+          <Input
+            type="password"
+            name="password"
+            value={values.password}
+            onChange={handlechange}
+          />
+        </FormControl>
+       
+        <Button
+          onClick={handleSubmit}
+          variant="contained"
+          style={{ backgroundColor: "#343a40", color: "white" }}
+        >
+         Sign Up
+        </Button>
+        <Link to="./" className="text-center text-primary">Already have an Account ?</Link>
+      </FormGroup>
+    </div>
+  );
+};
