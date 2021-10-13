@@ -20,9 +20,8 @@ export default function Contactform() {
       subject.trim().length === 0 ||
       message.trim().length === 0
     ) {
-      alert("please fill data")
-    }
-    else if (window.confirm("Submmited data, please confirm")) {
+      alert("please fill data");
+    } else if (window.confirm("Submmited data, please confirm")) {
       const res = await fetch(
         "https://test-website-2e03b-default-rtdb.firebaseio.com/HomepageContactfrom.json",
         {

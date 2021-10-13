@@ -8,10 +8,12 @@ import Cards from "./Cards";
 import Footer from "./Footer";
 import Contactform from "./Contactform";
 import CardData from "./CardData";
+import { NavbarMenu } from "./NavbarMenu";
 
 export const Home = () => {
   return (
     <div>
+      <NavbarMenu/>
       <div
         id="carouselExampleIndicators"
         className="carousel slide"

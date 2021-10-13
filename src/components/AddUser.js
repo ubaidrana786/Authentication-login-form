@@ -91,7 +91,7 @@ export const AddUser = () => {
         >
          Sign Up
         </Button>
-        <Link to="./">Log In</Link>
+        <Link to="./" className="text-center text-primary">Already have an Account ?</Link>
       </FormGroup>
     </div>
   );

@@ -1,10 +1,16 @@
 {
   "posts": [
     {
-      "name": "faizan ahmad sdsad",
+      "name": "faizan ahmad",
       "email": "ansarkhalil93@gmail.com",
-      "password": "12344",
+      "password": "1234",
       "id": 1
+    },
+    {
+      "name": "ubaid",
+      "email": "ubaidrana@gmail.com",
+      "password": "12345",
+      "id": 2
     }
   ]
 }

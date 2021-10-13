@@ -4,15 +4,13 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import AllUser from "./components/AllUser";
 import Update from "./components/Update";
 import { Login } from "./components/Login";
-
-import { NavbarMenu } from "./components/NavbarMenu";
 import Protected from "./components/Protected";
 function App(props) {
   return (
     <div className="App">
 
       <BrowserRouter>
-      <NavbarMenu/>
+      
         <Switch>
           <Route exact path="/add">
             {/* <Protected comp={AddUser} /> */}
